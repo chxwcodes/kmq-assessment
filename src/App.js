@@ -1,9 +1,13 @@
 import './App.css';
 
+// test data
+import { quizData } from './data/quizData';
+
 // components
 import StartTest from './components/StartTest';
 
 function App() {
+  console.log(quizData)
   return (
     <div className="App">
       <StartTest />
