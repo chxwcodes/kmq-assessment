@@ -1,9 +1,12 @@
 import './App.css';
 
+// components
+import StartTest from './components/StartTest';
+
 function App() {
   return (
     <div className="App">
-      
+      <StartTest />
     </div>
   );
 }
