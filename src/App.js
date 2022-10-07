@@ -1,16 +1,23 @@
 import './App.css';
+import { useState } from 'react';
 
 // test data
 import { quizData } from './data/quizData';
 
 // components
 import StartTest from './components/StartTest';
+import DisplayTest from './components/DisplayTest';
 
 function App() {
-  console.log(quizData)
+  const [testData, setTestData] = useState('');
+  
+  const handleStartTest = (testSelected) => {
+    setTestData(quizData[testSelected]);
+  }
+
   return (
     <div className="App">
-      <StartTest />
+    {!testData ? <StartTest handleStartTest={handleStartTest} /> : <DisplayTest testData={testData} />}
     </div>
   );
 }
