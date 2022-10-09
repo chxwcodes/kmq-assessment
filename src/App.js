@@ -17,7 +17,11 @@ function App() {
 
   return (
     <div className="App">
-    {!testData ? <StartTest handleStartTest={handleStartTest} /> : <DisplayTest testData={testData} />}
+    {!testData ? 
+    <StartTest handleStartTest={handleStartTest} /> 
+    : 
+    <DisplayTest testData={testData} setTestData={setTestData} />
+    }
     </div>
   );
 }
