@@ -1,4 +1,6 @@
 import { useState } from "react"
+import DisplayQuestions from "./DisplayQuestions";
+import DisplayResults from "./DisplayResults";
 
 export default function DisplayTest({ testData }) {
   const [currQuestion, setCurrQuestion] = useState(0);
@@ -8,8 +10,9 @@ export default function DisplayTest({ testData }) {
   const handleNextQuestion = () => {
     //check answer
     checkAnswer(selectedAnswer);
-    
+
     // handle to go to the next question & reset user selected answer
+    //else lead to summary page
     if (currQuestion <= testData.length) {
       setCurrQuestion(currQuestion + 1);
       setSelectedAnswer('');
@@ -30,28 +33,19 @@ export default function DisplayTest({ testData }) {
 
   return (
     <div>
-      <h2>{testData[currQuestion].question}</h2>
-
-      <ul>
-        {
-          testData[currQuestion].answerOptions.map((eachAnswer, index) => {
-            return (
-              <li key={`option${index}`}>
-                <input
-                  type="radio"
-                  name={currQuestion}
-                  id={index}
-                  value={eachAnswer}
-                  onChange={(e) => { handleSelected(e.target.value) }}
-                />
-                <label htmlFor={index}>{eachAnswer}</label>
-              </li>
-            )
-          })
-        }
-      </ul>
-  
-      <button onClick={handleNextQuestion}>Next</button>
+      {currQuestion >= testData.length ? 
+        <DisplayResults 
+          score={score}
+        /> 
+        : 
+        <DisplayQuestions 
+          testData={testData}
+          currQuestion={currQuestion}
+          selectedAnswer={selectedAnswer}
+          handleSelected={handleSelected}
+          handleNextQuestion={handleNextQuestion}
+        />
+      }
     </div>
   )
 }
