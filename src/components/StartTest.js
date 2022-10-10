@@ -4,13 +4,13 @@ export default function StartTest({ handleStartTest }) {
     <section className="testSelection">
       <div className="wrapper">
 
-        <h2>Measure Your Knowledge on What's on the Big Screens</h2>
+        <h1>Measure Your Knowledge on What's on the Big Screens</h1>
 
         <div className="testContainer">
           <div className="test">
             <div className="textContainer">
               <h3>📺 TV Shows</h3>
-              <p>This test assesses a candidate's ability to know and remember little trivia fun facts about TV shows with a series of questions. Using different questions that ranges from easy to hard, this tests helps the user understand how knowledgable they are to TV media.</p>
+              <p>This test assesses a candidate's ability to know and remember little trivia fun facts about TV shows with a series of questions. Using different questions that ranges from easy to hard, this tests helps the user understand how knowledgable they are in TV media.</p>
             </div>
             
             <div className="infoContainer">
@@ -22,7 +22,7 @@ export default function StartTest({ handleStartTest }) {
           <div className="test">
             <div className="textContainer">
               <h3>🎥 Movies</h3>
-              <p>This test assesses a candidate's ability to know and remember little trivia fun facts about movies with a series of questions. Using different questions that ranges from easy to hard, this tests helps the user understand how knowledgable they are to movies.</p>
+              <p>This test assesses a candidate's ability to know and remember little trivia fun facts about movies with a series of questions. Using different questions that ranges from easy to hard, this tests helps the user understand how knowledgable they are in movies.</p>
             </div>
             
             <div className="infoContainer">
