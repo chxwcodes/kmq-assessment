@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import DisplayQuestions from "./DisplayQuestions";
 import DisplayResults from "./DisplayResults";
 
@@ -6,7 +6,17 @@ export default function DisplayTest({ testData, setTestData }) {
   const [currQuestion, setCurrQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState('');
-  const [userName, setUserName] = useState('');
+
+  //reset everything when comp mounts
+  useEffect(() => {
+    //reset score
+    setScore(0);
+    //reset current question
+    setCurrQuestion(0);
+    //reset selected answer
+    setSelectedAnswer('');
+    //reset test data
+  }, [])
 
   const handleNextQuestion = () => {
     //check answer
@@ -32,26 +42,12 @@ export default function DisplayTest({ testData, setTestData }) {
     }
   }
 
-  const submitTest = () => {
-    // TO DO: Link it to DB
-    
-    //reset score
-    setScore(0);
-    //reset current question
-    setCurrQuestion(0);
-    //reset selected answer
-    setSelectedAnswer('');
-    //reset test data
-    setTestData('');
-  }
-
   return (
     <div>
       {currQuestion >= testData.length ? 
         <DisplayResults 
           score={score}
-          submitTest={submitTest}
-          setUserName={setUserName}
+          setTestData={setTestData}
         /> 
         : 
         <DisplayQuestions 
