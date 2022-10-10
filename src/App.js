@@ -20,15 +20,12 @@ function App() {
 
   return (
     <div className="App">
-      {!testData ? 
-      <StartTest handleStartTest={handleStartTest} /> 
-      : 
-      <DisplayTest testData={testData} setTestData={setTestData} />
-      }
 
       <Routes>
+        <Route path='/' element={!testData ? <StartTest handleStartTest={handleStartTest} /> : <DisplayTest testData={testData} setTestData={setTestData} />} />
         <Route path='/scores' element={<ScorePage />} />
       </Routes>
+      
     </div>
   );
 }
