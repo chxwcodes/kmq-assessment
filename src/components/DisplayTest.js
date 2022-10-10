@@ -6,18 +6,18 @@ export default function DisplayTest({ testData, setTestData }) {
   const [currQuestion, setCurrQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState('');
+  const [userName, setUserName] = useState('');
 
   const handleNextQuestion = () => {
     //check answer
     checkAnswer(selectedAnswer);
 
     // handle to go to the next question & reset user selected answer
+    // only go to the next question if user selected something
     if (currQuestion <= testData.length && selectedAnswer) {
       setCurrQuestion(currQuestion + 1);
       setSelectedAnswer('');
-    } else {
-      console.log('please make a selection')
-    }
+    } 
   }
 
   const handleSelected = (selectedOption) => {
@@ -51,6 +51,7 @@ export default function DisplayTest({ testData, setTestData }) {
         <DisplayResults 
           score={score}
           submitTest={submitTest}
+          setUserName={setUserName}
         /> 
         : 
         <DisplayQuestions 

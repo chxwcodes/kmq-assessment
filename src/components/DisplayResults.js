@@ -1,8 +1,6 @@
 import { useState } from "react"
 
-export default function DisplayResults({score, submitTest}) {
-  const [userName, setUserName] = useState('');
-
+export default function DisplayResults({ score, submitTest, setUserName }) {
   //handle userInput
   const handleUserInput = (e) => {
     setUserName(e.target.value);
