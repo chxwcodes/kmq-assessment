@@ -27,12 +27,15 @@ export default function DisplayResults({ score, setTestData }) {
     setTestData('');
   }
 
+  // to do: regEx, check for no characters, special char, etc
+
   return (
-    <div>
-      <h1>You scored: {score}/10</h1>
+    <div className='results'>
+      <h2>You scored: {score}/10</h2>
+
+      <p>Enter your name and submit it to our database.</p>
 
       <form onSubmit={(e) => { handleSubmitTest(e) }}>
-        <p>Enter your name and submit it to our database:</p>
         <label htmlFor="userName" className="sr-only">Name:</label>
         <input type="text" id="userName" onChange={handleUserInput} value={userName} maxLength={50}/>
 

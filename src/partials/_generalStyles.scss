@@ -33,6 +33,14 @@ button {
   font-size: 0.8rem;
 }
 
+input[type="text"] {
+  border: none;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid $black;
+}
+
 input[type="radio"] {
   margin-right: 20px;
   transform: scale(1.5);
