@@ -11,20 +11,31 @@ export default function DisplayResults({ score, setTestData }) {
     setUserName(e.target.value);
   }
 
-  const handleSubmitTest = (e) => {
+  //check if input is valid (no special characters and longer than 1 letter)
+  const isValidInput = (str) => {
+    return /^[a-zA-Z\s]*$/ && str.length > 1;
+  }
+
+  const handleSubmitTest = async (e) => {
     e.preventDefault();
 
-    //reference to db
-    const database = getDatabase(firebase);
-    const dbRef = ref(database);
+    const confirmation = await isValidInput(userName);
 
-    //push user's name & score to db
-    push(dbRef, {
-      'username': userName,
-      'score': score
-    });
+    if (confirmation) {
+      //reference to db
+      const database = getDatabase(firebase);
+      const dbRef = ref(database);
 
-    setTestData('');
+      //push user's name & score to db
+      push(dbRef, {
+        'username': userName,
+        'score': score
+      });
+
+      setTestData('');
+    } else {
+      console.log('Names must be over 1 letter long and contain no special characters.')
+    }
   }
 
   // to do: regEx, check for no characters, special char, etc
@@ -37,7 +48,7 @@ export default function DisplayResults({ score, setTestData }) {
 
       <form onSubmit={(e) => { handleSubmitTest(e) }}>
         <label htmlFor="userName" className="sr-only">Name:</label>
-        <input type="text" id="userName" onChange={handleUserInput} value={userName} maxLength={50}/>
+        <input type="text" id="userName" onChange={handleUserInput} value={userName} maxLength={50} required/>
 
         <button>Submit Score & Leave</button>
       </form>
