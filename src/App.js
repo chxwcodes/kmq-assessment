@@ -5,11 +5,10 @@ import { Routes, Route } from 'react-router-dom';
 // test data
 import { quizData } from './data/quizData';
 // components
+import Header from './components/Header';
 import StartTest from './components/StartTest';
 import DisplayTest from './components/DisplayTest';
-
-//pages
-import ScorePage from './pages/ScorePage';
+import ScorePage from './components/ScorePage';
 
 function App() {
   const [testData, setTestData] = useState('');
@@ -20,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
 
       <Routes>
         <Route path='/' element={!testData ? <StartTest handleStartTest={handleStartTest} /> : <DisplayTest testData={testData} setTestData={setTestData} />} />
