@@ -7,6 +7,7 @@ import { quizData } from './data/quizData';
 // components
 import StartTest from './components/StartTest';
 import DisplayTest from './components/DisplayTest';
+import ScorePage from './components/ScorePage';
 
 function App() {
   const [testData, setTestData] = useState('');
@@ -17,11 +18,13 @@ function App() {
 
   return (
     <div className="App">
-    {!testData ? 
-    <StartTest handleStartTest={handleStartTest} /> 
-    : 
-    <DisplayTest testData={testData} setTestData={setTestData} />
-    }
+      {!testData ? 
+      <StartTest handleStartTest={handleStartTest} /> 
+      : 
+      <DisplayTest testData={testData} setTestData={setTestData} />
+      }
+
+      <ScorePage />
     </div>
   );
 }
