@@ -1,7 +1,6 @@
 import firebase from '../firebase';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { useState, useEffect } from 'react';
-import { scryRenderedComponentsWithType } from 'react-dom/test-utils';
 
 export default function ScorePage() {
   const [userScores, setUserScores] = useState([]);
@@ -31,28 +30,31 @@ export default function ScorePage() {
   }, [])
 
   return(
-    <div>
-      <h2>Candidate Scores</h2>
+    <div className="scores">
+      <div className='wrapper'>
+        <h2>Candidate Scores</h2>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Score</th>
-          </tr>
-        </thead>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Score</th>
+            </tr>
+          </thead>
 
-        {userScores.map((eachUser) => {
-          return (
-            <tbody key={eachUser.key}>
-              <tr>
-                <td>{eachUser.username}</td>
-                <td>{eachUser.score}/10</td>
-              </tr>
-            </tbody>
-          )
-        })}
-      </table>
+          {userScores.map((eachUser) => {
+            return (
+              <tbody key={eachUser.key}>
+                <tr>
+                  <td>{eachUser.username}</td>
+                  <td>{eachUser.score}/10</td>
+                </tr>
+              </tbody>
+            )
+          })}
+        </table>
+      </div>
     </div>
+    
   )
 }

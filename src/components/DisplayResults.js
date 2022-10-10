@@ -34,7 +34,7 @@ export default function DisplayResults({ score, setTestData }) {
 
       setTestData('');
     } else {
-      console.log('Names must be over 1 letter long and contain no special characters.')
+      console.log('Names must be over 1 letter long and contain no special characters.');
     }
   }
 
