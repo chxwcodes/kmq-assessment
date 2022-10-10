@@ -43,7 +43,7 @@ export default function DisplayTest({ testData, setTestData }) {
   }
 
   return (
-    <div>
+    <div className="wrapper">
       {currQuestion >= testData.length ? 
         <DisplayResults 
           score={score}
