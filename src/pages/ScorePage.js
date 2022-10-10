@@ -42,13 +42,16 @@ export default function ScorePage() {
           </tr>
         </thead>
 
-        {/* {userScores.map((eachUser) => {
+        {userScores.map((eachUser) => {
           return (
-            <tbody key={eachUser}>
-              tr
+            <tbody key={eachUser.key}>
+              <tr>
+                <td>{eachUser.username}</td>
+                <td>{eachUser.score}/10</td>
+              </tr>
             </tbody>
           )
-        })} */}
+        })}
       </table>
     </div>
   )

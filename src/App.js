@@ -1,13 +1,15 @@
 import './App.css';
 import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 // test data
 import { quizData } from './data/quizData';
-
 // components
 import StartTest from './components/StartTest';
 import DisplayTest from './components/DisplayTest';
-import ScorePage from './components/ScorePage';
+
+//pages
+import ScorePage from './pages/ScorePage';
 
 function App() {
   const [testData, setTestData] = useState('');
@@ -24,7 +26,9 @@ function App() {
       <DisplayTest testData={testData} setTestData={setTestData} />
       }
 
-      <ScorePage />
+      <Routes>
+        <Route path='/scores' element={<ScorePage />} />
+      </Routes>
     </div>
   );
 }
