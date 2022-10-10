@@ -52,3 +52,24 @@
     margin: 0;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .testContainer {
+    flex-direction: column;
+  }
+
+  .test {
+    width: 100%;
+    min-height: initial;
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .test {
+    padding: 50px 30px;
+  }
+}

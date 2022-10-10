@@ -33,3 +33,9 @@ th {
 td {
   text-align: center;
 }
+
+@media screen and (max-width: 500px) {
+  .scores .wrapper {
+    padding: 20px;
+  }
+}

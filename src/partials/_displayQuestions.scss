@@ -49,3 +49,22 @@
   width: 100%;
 }
 
+@media screen and (max-width: 800px) {
+  .testSection .wrapper {
+    flex-direction: column;
+    
+    &>* {
+      width: 100%;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+    
+  }
+}
