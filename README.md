@@ -27,9 +27,9 @@
 
 ## Preview
 
-![Screenshot of landing page](./src/assets/screenshots/homepage.png 'Landing Page')
-![Screenshot of quiz page](./src/assets/screenshots/quizpage.png 'Quiz Page')
-![Screenshot of results page](./src/assets/screenshots/resultspage.png 'Results Page')
-![Screenshot of score page](./src/assets/screenshots/scorepage.png 'Score/Database Page')
-![Screenshot of ipad view](./src/assets/screenshots/ipad.png 'iPad View')
-![Screenshot of iphone](./src/assets/screenshots/iphone.png 'iPhone View')
+![Screenshot of landing page](./src/assets/homepage.png 'Landing Page')
+![Screenshot of quiz page](./src/assets/quizpage.png 'Quiz Page')
+![Screenshot of results page](./src/assets/resultspage.png 'Results Page')
+![Screenshot of score page](./src/assets/scorepage.png 'Score/Database Page')
+![Screenshot of ipad view](./src/assets/ipad.png 'iPad View')
+![Screenshot of iphone](./src/assets/iphone.png 'iPhone View')
