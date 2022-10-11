@@ -1,7 +1,5 @@
 # KMQ Take Home Assessment
 
-**View live site [here](https://backronymgen.netlify.app/).**
-
 ## Features
 
 - Landing page with a choice of two tests
@@ -27,9 +25,15 @@
 
 ## Preview
 
+### Landing Page
 ![Screenshot of landing page](./src/assets/homepage.png 'Landing Page')
+### Quiz Page
 ![Screenshot of quiz page](./src/assets/quizpage.png 'Quiz Page')
+### Results Page (the little square on the text input is just my browser extension, please ignore)
 ![Screenshot of results page](./src/assets/resultspage.png 'Results Page')
+### Score/Database Page
 ![Screenshot of score page](./src/assets/scorepage.png 'Score/Database Page')
+### iPad Page
 ![Screenshot of ipad view](./src/assets/ipad.png 'iPad View')
+### iPhone Page
 ![Screenshot of iphone](./src/assets/iphone.png 'iPhone View')
