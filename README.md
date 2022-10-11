@@ -1,5 +1,9 @@
 # KMQ Take Home Assessment
 
+## This project was created with React
+
+To run the app, in your terminal install the node modules with `npm install` then `npm start`.
+
 ## Features
 
 - Landing page with a choice of two tests
